@@ -9,7 +9,7 @@
 ROOTDIR = $(CURDIR)
 export ROOTDIR
 
-#SUBDIRS = 
+SUBDIRS = lch
 
 include $(CURDIR)/dirs.mk
 
