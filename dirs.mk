@@ -32,28 +32,6 @@ localinstall: all
 		fi \
 	done
 
-update_environment:
-	@for dir in $(SUBDIRS) ; do \
-		if [ -f $$dir/Makefile ]; then \
-			$(MAKE) -C $$dir update_environment ; \
-		else \
-			if [ ! -d $$dir ]; then mkdir $$dir; fi; \
-			cd $$dir; \
-			tar -x -f $(DAPENVTAR) -C $(ROOTDIR) .$(REPDIR)$$dir ; \
-			echo "Repository $(REPDIR)$$dir: updated from $(DAPENVTAR)"; \
-			cd ..; \
-		fi \
-	done
-
-runtime_environment: all
-	@if [ "x$(ROOTDIR)" != "x" ]; then \
-		for dir in $(SUBDIRS) ; do \
-			if [ -f $$dir/Makefile ]; then \
-				$(MAKE) -C $$dir runtime_environment ; \
-			fi \
-		done; \
-	fi
-
 list:
 	@for dir in $(SUBDIRS) ; do \
 		if [ -f $$dir/Makefile ]; then \
