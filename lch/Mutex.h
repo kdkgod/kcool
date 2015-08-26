@@ -9,13 +9,13 @@
 #include <pthread.h>
 
 
-/** Mutex container class, used by Lock.
+/** CMutex container class, used by Lock.
 	\ingroup threading */
-class Mutex
+class CMutex
 {
 public:
-	Mutex();
-	~Mutex();
+	CMutex();
+	~CMutex();
 
 	/*
 	*	mutex lock

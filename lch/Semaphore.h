@@ -15,11 +15,11 @@ typedef unsigned int value_t;
 /*
  *	only support same process
 */
-class Semaphore
+class CSemaphore
 {
 public:
-	Semaphore(value_t start_val = 0);
-	~Semaphore();
+	CSemaphore(value_t start_val = 0);
+	~CSemaphore();
 
 	/** \return 0 if successful */
 	int Post();
@@ -34,8 +34,8 @@ public:
 	int GetValue(int&);
 
 private:
-	Semaphore(const Semaphore& ) {} // copy constructor
-	Semaphore& operator=(const Semaphore& ) { return *this; } // assignment operator
+	CSemaphore(const CSemaphore& ) {} // copy constructor
+	CSemaphore& operator=(const CSemaphore& ) { return *this; } // assignment operator
 	sem_t m_sem;
 };
 

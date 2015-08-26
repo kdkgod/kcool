@@ -1,24 +1,23 @@
 #include "Mutex.h"
 
-Mutex::Mutex()
+CMutex::CMutex()
 {
 	pthread_mutex_init(&m_mutex, NULL);
 }
 
-
-Mutex::~Mutex()
+CMutex::~CMutex()
 {
 	pthread_mutex_destroy(&m_mutex);
 }
 
 
-void Mutex::lock() const
+void CMutex::lock() const
 {
 	pthread_mutex_lock(&m_mutex);
 }
 
 
-void Mutex::unLock() const
+void CMutex::unLock() const
 {
 	pthread_mutex_unlock(&m_mutex);
 }
