@@ -1,0 +1,10 @@
+1, 查找uuid
+show channels like 100 [可以为id, name]
+
+2, 调整音频
+uuid_audio 5ddc4afe-73e5-11e5-b12f-539bd1db113c start read level 0
+level是从-4至4
+
+3, 断开一个会话
+uuid_kill 5ddc4afe-73e5-11e5-b12f-539bd1db113c 
+
